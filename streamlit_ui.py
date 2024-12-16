@@ -9,7 +9,7 @@ st.title("🌸 Analyse des Fleurs - Dataset Iris 🌸")
 
 # Chargement des données
 df = pd.read_csv("https://gist.github.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
-print(df.columns)
+
 # Affichage d'un message d'accueil
 st.write("Bienvenue sur notre site d'analyse des fleurs !")
 st.write("Ce site utilise le dataset Iris pour explorer les caractéristiques des fleurs.")
@@ -22,27 +22,27 @@ st.dataframe(df)
 st.subheader("Visualisation des Caractéristiques des Fleurs")
 
 # Histogramme de la longueur des sépales
-fig1 = px.histogram(df, x='sepal_length', color='variety', 
+fig1 = px.histogram(df, x='sepal.length', color='variety', 
                      title='Distribution de la Longueur des Sépales',
-                     labels={'sepal_length': 'Longueur des Sépales'},
+                     labels={'sepal.length': 'Longueur des Sépales'},
                      color_discrete_sequence=px.colors.qualitative.Set1)
 
 st.plotly_chart(fig1)
 
 # Diagramme en boîte pour la largeur des sépales par espèce
-fig2 = px.box(df, x='variety', y='sepal_width', 
+fig2 = px.box(df, x='variety', y='sepal.width', 
                title='Largeur des Sépales par Espèce',
-               labels={'variety': 'Espèce', 'sepal_width': 'Largeur des Sépales'},
+               labels={'variety': 'Espèce', 'sepal.width': 'Largeur des Sépales'},
                color='variety',
                color_discrete_sequence=px.colors.qualitative.Set2)
 
 st.plotly_chart(fig2)
 
 # Visualisation de la relation entre longueur et largeur des sépales
-fig3 = px.scatter(df, x='sepal_length', y='sepal_width', color='variety',
+fig3 = px.scatter(df, x='sepal.length', y='sepal.width', color='variety',
                    title='Relation entre Longueur et Largeur des Sépales',
-                   labels={'sepal_length': 'Longueur des Sépales', 'sepal_width': 'Largeur des Sépales'},
-                   hover_data=['petal_length', 'petal_width'])
+                   labels={'sepal.length': 'Longueur des Sépales', 'sepal.width': 'Largeur des Sépales'},
+                   hover_data=['petal.length', 'petal.width'])
 
 st.plotly_chart(fig3)
 
