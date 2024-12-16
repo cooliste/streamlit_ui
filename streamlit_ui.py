@@ -30,16 +30,16 @@ fig1 = px.histogram(df, x='sepal_length', color='variety',
 st.plotly_chart(fig1)
 
 # Diagramme en boîte pour la largeur des sépales par espèce
-fig2 = px.box(df, x='species', y='sepal_width', 
+fig2 = px.box(df, x='variety', y='sepal_width', 
                title='Largeur des Sépales par Espèce',
-               labels={'species': 'Espèce', 'sepal_width': 'Largeur des Sépales'},
-               color='species',
+               labels={'variety': 'Espèce', 'sepal_width': 'Largeur des Sépales'},
+               color='variety',
                color_discrete_sequence=px.colors.qualitative.Set2)
 
 st.plotly_chart(fig2)
 
 # Visualisation de la relation entre longueur et largeur des sépales
-fig3 = px.scatter(df, x='sepal_length', y='sepal_width', color='species',
+fig3 = px.scatter(df, x='sepal_length', y='sepal_width', color='variety',
                    title='Relation entre Longueur et Largeur des Sépales',
                    labels={'sepal_length': 'Longueur des Sépales', 'sepal_width': 'Largeur des Sépales'},
                    hover_data=['petal_length', 'petal_width'])
