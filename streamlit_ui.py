@@ -9,7 +9,7 @@ st.title("🌸 Analyse des Fleurs - Dataset Iris 🌸")
 
 # Chargement des données
 df = pd.read_csv("https://gist.github.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
-
+print(df.columns)
 # Affichage d'un message d'accueil
 st.write("Bienvenue sur notre site d'analyse des fleurs !")
 st.write("Ce site utilise le dataset Iris pour explorer les caractéristiques des fleurs.")
@@ -22,7 +22,7 @@ st.dataframe(df)
 st.subheader("Visualisation des Caractéristiques des Fleurs")
 
 # Histogramme de la longueur des sépales
-fig1 = px.histogram(df, x='sepal_length', color='species', 
+fig1 = px.histogram(df, x='sepal_length', color='variety', 
                      title='Distribution de la Longueur des Sépales',
                      labels={'sepal_length': 'Longueur des Sépales'},
                      color_discrete_sequence=px.colors.qualitative.Set1)
